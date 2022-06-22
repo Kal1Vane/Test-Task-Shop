@@ -13,10 +13,10 @@ function Filter() :JSX.Element {
     const target = evt.target as HTMLElement;
     if (target.tagName !== 'BUTTON'){return;}
     if (target.classList.contains('filter-mobail__select-button')){
-      const popUp = document.querySelector('.filter__container');
+      const popUp = document.querySelector('.filter__wrapper');
       (popUp as HTMLElement).classList.toggle('active');
     } else if (target.classList.contains('filter__item-button')){
-      const popUp = document.querySelector('.filter__container');
+      const popUp = document.querySelector('.filter__wrapper');
       (popUp as HTMLElement).classList.remove('active');
       const name = target.getAttribute('data-name');
       dispatch(changeFilter(name));
@@ -24,26 +24,28 @@ function Filter() :JSX.Element {
   }
 
   return (
-    <div onClick={onClickChangeFilter} className="filter__container">
+    <div onClick={onClickChangeFilter} className="filter__wrapper">
       <div className="filter-mobail__wrapper-select">
         <button type="button" className="filter-mobail__select-button">{currentFilter}</button>
       </div>
-      <ul className="filter__list"
-      >
-        {Object.values(FilterName).map((name) => (
-          <li 
-          key={nanoid(10)} 
-          className={`filter__item ${currentFilter === name ? 'active' : ''}`}
-          >
-            <button 
-            className="filter__item-button"
-            data-name={name}
+      <div className="filter__container">
+        <ul className="filter__list"
+        >
+          {Object.values(FilterName).map((name) => (
+            <li 
+            key={nanoid(10)} 
+            className={`filter__item ${currentFilter === name ? 'active' : ''}`}
             >
-              {name}
-            </button>
-          </li>
-        ))}
-      </ul>
+              <button 
+              className="filter__item-button"
+              data-name={name}
+              >
+                {name}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

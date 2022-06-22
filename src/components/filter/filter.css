@@ -1,12 +1,21 @@
-.filter__container {
+.filter__wrapper {
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 0 10px;
   padding-top: 80px;
   position: relative;
+  flex-direction: column;
+  
+}
+.filter__container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .filter__list {
   display: flex;
@@ -32,8 +41,8 @@
 .filter-mobail__wrapper-select {
   display: none;
   width: 100%;
-  max-width: 370px;
-  min-width: 310px;
+  max-width: 100%;
+  min-width: 300px;
 }
 .filter-mobail__select-button {
   background-color: #fff;
@@ -60,8 +69,8 @@
   border-top: 6px solid rgb(239,109,88);
   transition: all .5s;
 }
-.filter__container.active .filter-mobail__select-button::after {
-  transform: rotate(180deg) translateY(5px);
+.filter__wrapper.active .filter-mobail__select-button::after {
+  transform: rotate(180deg) translateY(10px);
 }
 @media screen and (max-width: 767px) {
   .filter-mobail__wrapper-select {
@@ -71,16 +80,20 @@
     display: none;
     position: absolute;
     flex-direction: column;
-    top: 140px;
+    top: 0;
+    margin-top: 10px;
+    left: 0;
     z-index: 1;
     background-color: #fff;
     border: 1px solid rgb(243,209,191);
-    max-width: 370px;
+    max-width: 100%;
+    min-width: 300px;
+    width: 100%;
     border-radius: 6px;
     gap: 5px;
     padding: 5px 0px;
   }
-  .filter__container.active .filter__list {
+  .filter__wrapper.active .filter__list {
     display: flex;
   }
 }
