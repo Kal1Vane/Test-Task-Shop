@@ -1,9 +1,10 @@
 .filter__container {
-  max-width: 1170px;
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 10px;
   padding-top: 80px;
   position: relative;
 }
@@ -14,10 +15,8 @@
   width: 560px;
 }
 .filter__item {
-
   color: rgba(57,20,0,64%);
 }
-
 
 .filter__item-button {
   background-color: transparent;
@@ -25,6 +24,7 @@
   padding: 0;
   cursor: pointer;
   color: rgba(57,20,0,64%);
+  font-family: 'Epilogue-Regular';
 }
 .filter__item.active .filter__item-button{
   color: rgba(22,205,83,100%);
@@ -33,7 +33,7 @@
   display: none;
   width: 100%;
   max-width: 370px;
-  min-width: 330px;
+  min-width: 310px;
 }
 .filter-mobail__select-button {
   background-color: #fff;
@@ -46,6 +46,9 @@
   border-radius: 8px;
   color: rgba(57,20,0,64%);
   position: relative;
+  transition: all .5s;
+  padding-left: 15px;
+  font-family: 'Epilogue-Regular';
 }
 .filter-mobail__select-button::after {
   position: absolute;
@@ -55,6 +58,10 @@
   content: "";
 	border: 6px solid transparent; 
   border-top: 6px solid rgb(239,109,88);
+  transition: all .5s;
+}
+.filter__container.active .filter-mobail__select-button::after {
+  transform: rotate(180deg) translateY(5px);
 }
 @media screen and (max-width: 767px) {
   .filter-mobail__wrapper-select {
@@ -73,7 +80,7 @@
     gap: 5px;
     padding: 5px 0px;
   }
-  .filter__list.active {
+  .filter__container.active .filter__list {
     display: flex;
   }
 }

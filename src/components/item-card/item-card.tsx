@@ -10,7 +10,7 @@ function ItemCard(props: PropsPlacesCard) :JSX.Element{
 
   return (
     <li 
-    className={`place-card ${isActive && 'active'}`}
+    className={`place-card ${isActive ? 'active' : ''}`}
     >
       <article className="place-card__main" data-id={id}> 
         <img className="place-card__image" src={image} alt={title} width="100%" height="100%" />

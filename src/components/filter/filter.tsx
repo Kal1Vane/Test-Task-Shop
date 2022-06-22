@@ -13,10 +13,10 @@ function Filter() :JSX.Element {
     const target = evt.target as HTMLElement;
     if (target.tagName !== 'BUTTON'){return;}
     if (target.classList.contains('filter-mobail__select-button')){
-      const popUp = document.querySelector('.filter__list');
+      const popUp = document.querySelector('.filter__container');
       (popUp as HTMLElement).classList.toggle('active');
     } else if (target.classList.contains('filter__item-button')){
-      const popUp = document.querySelector('.filter__list');
+      const popUp = document.querySelector('.filter__container');
       (popUp as HTMLElement).classList.remove('active');
       const name = target.getAttribute('data-name');
       dispatch(changeFilter(name));
