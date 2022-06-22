@@ -1,7 +1,9 @@
+
 import ItemCard from "../item-card/item-card";
 import './list-card.css';
 
 function ListCard() :JSX.Element{
+
   return (
     <section className="main__places">
       <ul className="place-card__list">
