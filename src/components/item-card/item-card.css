@@ -49,3 +49,9 @@
   font-size: 40px;
   font-family: 'Epilogue-ExtraBold';
 }
+
+@media screen and (max-width:1040px) {
+  .place-card__main {
+    padding-left: 28px;
+  }
+}
