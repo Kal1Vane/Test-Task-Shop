@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1170px;
+  margin: 0 auto;
+  align-items: center;
+
+}
+
+.header__container {
+  background-color: #28293E;
+  padding: 15px 0;
+}
+
+.header__nav-list {
+  display: flex;
+  gap: 110px;
+}
+
+.header__nav-link {
+  list-style: none;
+  font-size: 16px;
+  color: #fff;
+  font-family: 'Epilogue-Regular';
+  text-decoration: none;
+}
+
+.header__right-button {
+  background-color: transparent;
+  padding: 0;
+  width: 138px;
+  height: 48px;
+  color: #fff;
+  border-radius: 6px;
+  border: 1px solid rgb(103,104,119);
+  cursor: pointer;
+  text-transform: uppercase;
+}
