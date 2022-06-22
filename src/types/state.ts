@@ -10,4 +10,6 @@ export type CardProcess = {
   currentPlacesCard : PlacesCard[],
   currentFilter : FilterName,
   filteredCards :PlacesCard[],
+  renderedCards : PlacesCard[],
+  renderCardsCount : number,
 }

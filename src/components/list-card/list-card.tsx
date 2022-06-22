@@ -1,14 +1,25 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks";
-import { changeActiveCard, changeFilter, removeCards } from "../../store/card-store/card-store";
-import { getFilteredCards } from "../../store/card-store/selectors";
+import { changeActiveCard, changeFilter, changeRenderCardsCount, removeCards } from "../../store/card-store/card-store";
+import { getFilter, getFilteredCards, getRenderedCards } from "../../store/card-store/selectors";
 import ItemCard from "../item-card/item-card";
 import './list-card.css';
 
 function ListCard() :JSX.Element{
-  const currentCard = useAppSelector(getFilteredCards)
+  const currentFilteredCards = useAppSelector(getFilteredCards)
+  const renderCards = useAppSelector(getRenderedCards);
+  const currentFilter = useAppSelector(getFilter);
   const dispatch = useAppDispatch();
+  const [isLoadMore,setLoadMore] = useState<boolean>(true);
+
+  useEffect(() => {
+    if(currentFilteredCards.length > renderCards.length){
+      setLoadMore(true);
+    } else if(currentFilteredCards.length === renderCards.length){
+      setLoadMore(false);
+    }
+  },[currentFilteredCards,renderCards])
 
   function onClickList (evt : React.MouseEvent<HTMLUListElement, MouseEvent>) {
     const target = evt.target as HTMLElement;
@@ -31,19 +42,30 @@ function ListCard() :JSX.Element{
       document.removeEventListener('keydown', onPressKeyDelete);
     }
   }, [])
-  
+
+  if (renderCards.length === 0) {
+    return (
+    <section className="main__places empty">
+      <h3 className="main__places-title">Empty card {currentFilter}</h3>
+     </section>)
+  }
+
   return (
     <section
      className="main__places">
       <ul className="place-card__list"
       onClick={onClickList}>
-        {currentCard.map((card) => {
+        {renderCards.map((card) => {
           return <ItemCard key={card.id} card={card} />
         })}
      </ul>
-     <div className="main__places-button-wrapper">
-        <button type="button" className="main__places-button" >load more</button>
-     </div>
+
+     {isLoadMore ? 
+        <div className="main__places-button-wrapper">
+          <button onClick={() => dispatch(changeRenderCardsCount())} type="button" className="main__places-button" >load more</button>
+       </div>
+       : ''
+     }
     </section>
 
   )
