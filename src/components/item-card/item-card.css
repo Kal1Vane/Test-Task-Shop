@@ -6,6 +6,8 @@
   height: 416px;
   border-radius: 12px;
   border: 4px solid transparent;
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
   transition: all .4s;
 }
 .place-card.active {
@@ -14,10 +16,19 @@
 .place-card__main {
   height: 100%;
   padding: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   padding-bottom: 53px;
   row-gap: 16px;
 }
@@ -27,13 +38,15 @@
   left: 0;
   right: 0;
   bottom: 0;
-  transform: translateZ(-10px);
+  -webkit-transform: translateZ(-10px);
+          transform: translateZ(-10px);
   pointer-events: none;
   border-radius: 6px;
 }
 .place-card__filter-button,
 .place-card__name {
-  transform: translateZ(10px);
+  -webkit-transform: translateZ(10px);
+          transform: translateZ(10px);
 }
 .place-card__filter-button {
   cursor: pointer;
