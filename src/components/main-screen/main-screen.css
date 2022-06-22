@@ -36,6 +36,9 @@
   .main__title-description {
     width: 100%;
   }
+  .main__title {
+    font-size: 56px ;
+  }
 } 
 @media screen and (max-width:464px) {
   .main__title-description {
