@@ -9,7 +9,7 @@ function getRandomInt(min = 0 , max = 1) : number {
 }
 
 export const makeFakeCategory = () : FilterName => {
-  const arrayCategory = Object.values(FilterName);
+  const arrayCategory = Object.values(FilterName).filter((category) => category !== FilterName.ShowAll);
   const numberRandom = getRandomInt(0, arrayCategory.length - 1);
   return arrayCategory[numberRandom];
 }

@@ -42,7 +42,6 @@
 }
 .place-card__name {
   margin: 0;
-  text-transform: uppercase;
   color: #fff;
   font-size: 40px;
   font-family: 'Epilogue-ExtraBold';
