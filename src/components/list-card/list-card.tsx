@@ -12,7 +12,7 @@ function ListCard() :JSX.Element{
     <section className="main__places">
       <ul className="place-card__list">
         {currentCard.map((card) => {
-          return <ItemCard card={card} />
+          return <ItemCard key={card.id} card={card} />
         })}
      </ul>
      <div className="main__places-button-wrapper">
