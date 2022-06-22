@@ -28,6 +28,7 @@
   bottom: 0;
   transform: translateZ(-10px);
   pointer-events: none;
+  border-radius: 6px;
 }
 .place-card__filter-button,
 .place-card__name {

@@ -1,6 +1,7 @@
 .main__places {
+  padding: 0 10px;
   padding-top: 75px;
-  max-width: 1170px;
+  max-width: 1180px;
   margin: 0 auto;
 }
 .main__places.empty {
@@ -36,6 +37,19 @@
   display: grid;
   row-gap: 32px;
   column-gap: 30px;
-  grid-template-columns: repeat( auto-fit, minmax(370px, 1fr) );;
+  grid-template-columns: repeat( 4, minmax(330px, 370px) );
   grid-template-rows: auto;
+  justify-content: center;
+}
+
+@media screen and (max-width:1440px) {
+  .place-card__list {
+    grid-template-columns: repeat( 3, minmax(330px, 370px) );
+
+  }
+}
+@media screen and (max-width:1040px) {
+  .place-card__list {
+    grid-template-columns: repeat( auto-fill, minmax(330px, 370px) );
+  }
 }

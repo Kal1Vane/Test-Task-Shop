@@ -2,7 +2,7 @@ import { AppRoute } from "../../const";
 
 function Logo() : JSX.Element {
   return (
-    <a href={AppRoute.Main} className="header__logo-link">
+    <a href={AppRoute.Main} className="header__logo-link" onClick={(evt) => evt.preventDefault()}>
       <img 
       className="header__logo"
       src="img/logo.svg"

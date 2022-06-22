@@ -31,3 +31,14 @@
   background-color: rgb(253,240,233);
   padding-bottom: 185px;
 }
+
+@media screen and (max-width:767px) {
+  .main__title-description {
+    width: 100%;
+  }
+} 
+@media screen and (max-width:464px) {
+  .main__title-description {
+    max-width: 300px;
+  }
+}

@@ -9,17 +9,26 @@ function Filter() :JSX.Element {
   const currentFilter = useAppSelector(getFilter);
   const dispatch = useAppDispatch();
 
-  function onClickChangeFilter(evt : React.MouseEvent<HTMLUListElement, MouseEvent>){
+  function onClickChangeFilter(evt : React.MouseEvent<HTMLDivElement, MouseEvent>){
     const target = evt.target as HTMLElement;
     if (target.tagName !== 'BUTTON'){return;}
-    const name = target.getAttribute('data-name');
-    dispatch(changeFilter(name));
+    if (target.classList.contains('filter-mobail__select-button')){
+      const popUp = document.querySelector('.filter__list');
+      (popUp as HTMLElement).classList.toggle('active');
+    } else if (target.classList.contains('filter__item-button')){
+      const popUp = document.querySelector('.filter__list');
+      (popUp as HTMLElement).classList.remove('active');
+      const name = target.getAttribute('data-name');
+      dispatch(changeFilter(name));
+    }
   }
-  
+
   return (
-    <div className="filter__container">
+    <div onClick={onClickChangeFilter} className="filter__container">
+      <div className="filter-mobail__wrapper-select">
+        <button type="button" className="filter-mobail__select-button">{currentFilter}</button>
+      </div>
       <ul className="filter__list"
-      onClick={onClickChangeFilter}
       >
         {Object.values(FilterName).map((name) => (
           <li 
