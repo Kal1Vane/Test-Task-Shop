@@ -1,0 +1,33 @@
+
+.main__title-wrapper {
+  background-color: #28293E;
+  height: 321px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 85px;
+  row-gap: 35px;
+}
+
+.main__title {
+  margin: 0;
+  color: #fff;
+  font-weight: 700;
+  font-size: 72px;
+  font-family: 'Epilogue-Regular';
+}
+
+.main__title-description {
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Epilogue-Regular';
+  color: rgba(255,255,255, 64%);
+  width: 570px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.main__content-wrapper {
+  background-color: rgb(253,240,233);
+  padding-bottom: 185px;
+}

@@ -1,0 +1,33 @@
+.main__places {
+  padding-top: 75px;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.main__places-button-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+}
+.main__places-button {
+  padding: 0;
+  color: rgb(57,20,0);
+  background-color: #fff;
+  border: 0px;
+  border-radius: 6px;
+  height: 48px;
+  width: 170px;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.place-card__list {
+  display: grid;
+  row-gap: 32px;
+  column-gap: 30px;
+  grid-template-columns: repeat( auto-fit, minmax(370px, 1fr) );;
+  grid-template-rows: auto;
+}

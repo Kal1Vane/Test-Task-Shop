@@ -1,5 +1,6 @@
 import { nanoid } from "nanoid";
 import { FilterName } from "../../const";
+import './filter.css';
 
 function Filter() :JSX.Element {
   return (
@@ -7,7 +8,7 @@ function Filter() :JSX.Element {
       <ul className="filter__list">
         {Object.values(FilterName).map((name) => (
           <li key={nanoid(10)} className="filter__item">
-            {name}
+            <button className="filter__item-button">{name}</button>
           </li>
         ))}
       </ul>
