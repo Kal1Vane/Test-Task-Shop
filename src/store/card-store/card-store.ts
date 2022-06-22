@@ -14,14 +14,15 @@ export const cardProcess = createSlice({
   initialState,
   reducers : {
     changeActiveCard : (state,action) => {
+      console.log(state);
       state.currentPlacesCard.forEach((card) => {
-        if (action.payload.id === card.id){
+        if (action.payload === card.id){
           card.isActive = !card.isActive
         }
       })
     },
     removeCards : (state) => {
-      state.currentPlacesCard.filter((card) => card.isActive !== true);
+      state.currentPlacesCard = state.currentPlacesCard.filter((card) => card.isActive !== true);
     },
     changeFilter : (state,action) => {
       const choiseFilter = Object.values(FilterName).find((filter) => filter === action.payload);

@@ -11,10 +11,10 @@ function ItemCard(props: PropsPlacesCard) :JSX.Element{
   return (
     <li 
     className={`place-card ${isActive && 'active'}`}
-    data-id={id}>
-      <article className="place-card__main"> 
+    >
+      <article className="place-card__main" data-id={id}> 
         <img className="place-card__image" src={image} alt={title} width="100%" height="100%" />
-        <button data-id={id} className="place-card__filter-button" type="button">{category}</button>
+        <button data-category={category} className="place-card__filter-button" type="button">{category}</button>
         <h3 className="place-card__name">{title}</h3>
       </article>
     </li>
