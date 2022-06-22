@@ -37,11 +37,10 @@
 }
 .place-card__filter-button {
   cursor: pointer;
-  width: 84px;
-  height: 38px;
   border: 0px;
   border-radius: 50px;
   font-family: 'Epilogue-Regular';
+  padding: 12px 19px;
 }
 .place-card__name {
   margin: 0;
