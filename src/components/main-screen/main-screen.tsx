@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import Filter from "../filter/filter";
 import ListCard from "../list-card/list-card";
 import './main-screen.css';

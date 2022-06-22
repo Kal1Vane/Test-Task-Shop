@@ -8,5 +8,6 @@ export type AppDispatch = typeof store.dispatch;
 
 export type CardProcess = {
   currentPlacesCard : PlacesCard[],
-  currentFilter : FilterName
+  currentFilter : FilterName,
+  filteredCards :PlacesCard[],
 }

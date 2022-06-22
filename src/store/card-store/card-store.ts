@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { getFilterCards } from "../../utils"
 import { FilterName, NameProcess } from "../../const"
-import { MakeFakePlaceCards } from "../../mocks"
 import { CardProcess } from "../../types/state"
 
 
 const initialState : CardProcess = {
-  currentPlacesCard : MakeFakePlaceCards(),
+  currentPlacesCard : [],
   currentFilter: FilterName.ShowAll,
+  filteredCards : [],
 }
 
 export const cardProcess = createSlice({
@@ -27,8 +28,13 @@ export const cardProcess = createSlice({
     changeFilter : (state,action) => {
       const choiseFilter = Object.values(FilterName).find((filter) => filter === action.payload);
       choiseFilter ? state.currentFilter = choiseFilter : state.currentFilter = FilterName.ShowAll;
+      state.filteredCards = getFilterCards(state.currentPlacesCard,state.currentFilter);
     },
+    setPlacesCard : (state,action) => {
+      state.currentPlacesCard = action.payload;
+      state.filteredCards = getFilterCards(state.currentPlacesCard,state.currentFilter);
+    }
   }
 });
 
-export const {changeActiveCard,removeCards,changeFilter} = cardProcess.actions;
+export const {changeActiveCard,removeCards,changeFilter,setPlacesCard} = cardProcess.actions;

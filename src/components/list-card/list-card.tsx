@@ -2,12 +2,12 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { changeActiveCard, changeFilter, removeCards } from "../../store/card-store/card-store";
-import { getPlacesCard } from "../../store/card-store/selectors";
+import { getFilteredCards } from "../../store/card-store/selectors";
 import ItemCard from "../item-card/item-card";
 import './list-card.css';
 
 function ListCard() :JSX.Element{
-  const currentCard = useAppSelector(getPlacesCard)
+  const currentCard = useAppSelector(getFilteredCards)
   const dispatch = useAppDispatch();
 
   function onClickList (evt : React.MouseEvent<HTMLUListElement, MouseEvent>) {
