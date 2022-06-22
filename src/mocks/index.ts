@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import { FilterName, MAX_PLACES_CARD } from "../const";
 import { PlacesCard } from "../types";
 
@@ -27,6 +28,7 @@ export const makeFakePlacesCard = () : PlacesCard => ({
     category : makeFakeCategory(), 
     image : makeFakeImage(),
     isActive: false,
+    id: nanoid(10),
 })
 
 export const MakeFakePlaceCards = () : PlacesCard[]  => {

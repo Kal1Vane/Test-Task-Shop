@@ -5,4 +5,5 @@ export type PlacesCard =  {
   category: FilterName,
   image : string,
   isActive : boolean,
+  id: string,
 }

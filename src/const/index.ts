@@ -17,3 +17,7 @@ export enum AppRoute {
 
 export const MAX_PLACES_CARD = 40;
 export const CARD_COUNT_PER_STEP = 9;
+
+export enum NameProcess {
+  card = 'CARD',
+}

@@ -1,4 +1,3 @@
-
 import ItemCard from "../item-card/item-card";
 import './list-card.css';
 
